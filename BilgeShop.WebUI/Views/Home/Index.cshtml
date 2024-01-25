@@ -1,0 +1,27 @@
+﻿@model int
+
+
+<partial name="_BannerPartial">
+
+    <div class="row mt-5 mb-5">
+
+        <div class="col-3">
+
+
+
+        @await Component.InvokeAsync("Categories")
+         @* <vc:categories></vc:categories>*@
+
+        </div>
+
+
+        <div class="col-9">
+
+            @await Component.InvokeAsync("Products", new { categoryId = ViewBag.CategoryId})
+            @*<vc:products category-id="@ViewBag.CategoryId"></vc:products>*@
+
+            
+
+        </div>
+
+    </div>
